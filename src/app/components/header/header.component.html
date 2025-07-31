@@ -14,25 +14,13 @@
       
       <!-- Navigation Links -->
       <ul class="nav-links" [class.active]="isMenuOpen">
-        <li><a href="#home" class="smooth-scroll" (click)="closeMenu()">Início</a></li>
+        <li><a href="#hero" class="smooth-scroll" (click)="closeMenu()">Início</a></li>
         <li><a href="#sobre" class="smooth-scroll" (click)="closeMenu()">Sobre</a></li>
         <li><a href="#cursos" class="smooth-scroll" (click)="closeMenu()">Cursos</a></li>
         <li><a href="#noticias" class="smooth-scroll" (click)="closeMenu()">Notícias</a></li>
         <li><a href="#eventos" class="smooth-scroll" (click)="closeMenu()">Eventos</a></li>
         <li><a href="#contato" class="smooth-scroll" (click)="closeMenu()">Contato</a></li>
       </ul>
-      
-      <!-- Contact Info -->
-      <div class="contact-actions">
-        <a href="tel:(11) 4567-8900" class="contact-link">
-          <i class="fas fa-phone"></i>
-          <span>(11) 4567-8900</span>
-        </a>
-        <a href="mailto:contato@institutoescola.com" class="contact-link">
-          <i class="fas fa-envelope"></i>
-          <span>Email</span>
-        </a>
-      </div>
       
       <!-- Mobile Menu Button -->
       <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
