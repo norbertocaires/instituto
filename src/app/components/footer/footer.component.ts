@@ -13,5 +13,7 @@ export class FooterComponent {
   private schoolDataService = inject(SchoolDataService);
   schoolInfo: SchoolInfo = this.schoolDataService.getSchoolInfo();
   
+
+  
   currentYear = new Date().getFullYear();
 }
