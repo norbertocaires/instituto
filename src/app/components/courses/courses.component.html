@@ -1,0 +1,15 @@
+<section id="cursos" class="section bg-light">
+  <div class="container">
+    <h2>Nossos Cursos</h2>
+    <div class="cursos-grid">
+      <div class="curso-card" *ngFor="let curso of courses">
+        <h3>{{ curso.nome }}</h3>
+        <p class="curso-descricao">{{ curso.descricao }}</p>
+        <div class="curso-details">
+          <p><strong>Idade:</strong> {{ curso.idade }}</p>
+          <p><strong>Modalidade:</strong> {{ curso.modalidade }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

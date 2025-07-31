@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ schoolInfo.nome }}</h3>
+        <p>{{ schoolInfo.slogan }}</p>
+        <div class="footer-social">
+          <a [href]="schoolInfo.instagram" target="_blank" title="Instagram">📱</a>
+          <a [href]="schoolInfo.facebook" target="_blank" title="Facebook">📘</a>
+          <a [href]="'mailto:' + schoolInfo.email" title="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>📍 {{ schoolInfo.endereco }}</p>
+        <p>📞 {{ schoolInfo.telefone }}</p>
+        <p>📱 {{ schoolInfo.whatsapp }}</p>
+      </div>
+      <div class="footer-section">
+        <h4>Horário de Funcionamento</h4>
+        <p>Segunda a Sexta:<br>7:00 - 17:00</p>
+        <p>Secretaria:<br>7:00 - 11:30<br>13:00 - 17:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} {{ schoolInfo.nome }}. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <!-- Logo/Brand -->
+      <div class="navbar-brand">
+        <div class="logo">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <h1>{{ schoolInfo.nome }}</h1>
+          <span>{{ schoolInfo.slogan }}</span>
+        </div>
+      </div>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a href="#home" (click)="closeMenu()">Início</a></li>
+        <li><a href="#sobre" (click)="closeMenu()">Sobre</a></li>
+        <li><a href="#cursos" (click)="closeMenu()">Cursos</a></li>
+        <li><a href="#noticias" (click)="closeMenu()">Notícias</a></li>
+        <li><a href="#eventos" (click)="closeMenu()">Eventos</a></li>
+        <li><a href="#contato" (click)="closeMenu()">Contato</a></li>
+      </ul>
+      
+      <!-- CTA Button -->
+      <a href="#contato" class="cta-button" (click)="closeMenu()">
+        Matricule-se
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+<section id="eventos" class="section">
+  <div class="container">
+    <h2 class="titulo-section">Próximos Eventos</h2>
+    <div class="eventos-grid">
+      <div class="evento-card" *ngFor="let evento of events">
+        <div class="evento-cabecalho">
+          <div class="evento-data">
+            <span class="evento-dia">{{ evento.data.dia }}</span>
+            <span class="evento-mes">{{ evento.data.mes }}</span>
+          </div>
+          <div class="evento-icone">
+            <span>🎉</span>
+          </div>
+        </div>
+        <div class="evento-conteudo">
+          <h3 class="evento-titulo">{{ evento.titulo }}</h3>
+          <p class="evento-descricao">{{ evento.descricao }}</p>
+        </div>
+        <div class="evento-rodape">
+          <span class="evento-hora"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1976d2" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> {{ evento.hora }}</span>
+          <span class="evento-local" *ngIf="evento.local"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#1976d2"/></svg> {{ evento.local }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
