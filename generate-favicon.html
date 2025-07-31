@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Favicon</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Draw favicon background
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Pencil body (wood part)
+        ctx.fillStyle = '#fbbf24';
+        ctx.fillRect(8, 4, 6, 20);
+        
+        // Pencil tip (graphite)
+        ctx.fillStyle = '#374151';
+        ctx.beginPath();
+        ctx.moveTo(11, 4);
+        ctx.lineTo(8, 0);
+        ctx.lineTo(14, 0);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Metal ferrule
+        ctx.fillStyle = '#d1d5db';
+        ctx.fillRect(8, 24, 6, 3);
+        
+        // Eraser
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(9, 27, 4, 4);
+        
+        // Pencil details
+        ctx.fillStyle = '#f59e0b';
+        ctx.fillRect(8, 8, 6, 1);
+        ctx.fillRect(8, 12, 6, 1);
+        ctx.fillRect(8, 16, 6, 1);
+        ctx.fillRect(8, 20, 6, 1);
+        
+        // Brand text simulation
+        ctx.fillStyle = '#1f2937';
+        ctx.fillRect(9, 10, 4, 0.5);
+        
+        // Convert to data URL and download
+        const dataURL = canvas.toDataURL('image/png');
+        console.log('Favicon data URL:', dataURL);
+    </script>
+</body>
+</html>
