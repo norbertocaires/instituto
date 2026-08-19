@@ -21,34 +21,11 @@
 
 .footer-top {
     position: relative;
-    display: grid;
-    grid-template-columns: 1.3fr 1.5fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.footer-brand {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
-
-    .footer-logo {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-        flex-shrink: 0;
-    }
-
-    h3 {
-        color: white;
-        font-weight: 800;
-        font-size: 1.15rem;
-        line-height: 1.3;
-        margin: 0;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .footer-col {
@@ -163,15 +140,22 @@
 
 @media (max-width: 768px) {
     .footer-top {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
     }
 
-    .footer-contact-list li {
-        justify-content: center;
-        text-align: left;
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .footer-contact-list {
+        width: 100%;
     }
 
     .footer-col h4::after {
