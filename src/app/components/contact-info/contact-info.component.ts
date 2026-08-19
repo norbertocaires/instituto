@@ -15,10 +15,6 @@ export class ContactInfoComponent {
 
   schoolInfo: SchoolInfo = this.schoolDataService.getSchoolInfo();
 
-  get mapsSearchLink(): string {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(this.schoolInfo.endereco)}`;
-  }
-
   get whatsAppLink(): string {
     const cleanNumber = this.schoolInfo.whatsapp.replace(/\D/g, '');
     return `https://wa.me/${cleanNumber}`;
