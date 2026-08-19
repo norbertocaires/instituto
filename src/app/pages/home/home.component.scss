@@ -1,0 +1,27 @@
+// Layout da página inicial
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 140px); // Ajusta conforme altura do header/footer
+  display: flex;
+  flex-direction: column;
+}
+
+// Espaçamento padrão das seções
+section {
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    min-height: calc(100vh - 120px);
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+}

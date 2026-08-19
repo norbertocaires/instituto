@@ -1,33 +1,12 @@
-// Global app component styles
+// Estilos globais do app-root — o layout específico de cada página fica
+// no componente da própria página (ver src/app/pages/*).
 :host {
   display: block;
   width: 100%;
   min-height: 100vh;
 }
 
-main {
-  min-height: calc(100vh - 140px); // Adjust based on header/footer height
-  display: flex;
-  flex-direction: column;
-}
-
-// Ensure smooth scrolling
+// Garante rolagem suave em qualquer página
 * {
   scroll-behavior: smooth;
-}
-
-// Section spacing
-section {
-  padding: 2rem 0;
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  main {
-    min-height: calc(100vh - 120px);
-  }
-  
-  section {
-    padding: 1.5rem 0;
-  }
 }
