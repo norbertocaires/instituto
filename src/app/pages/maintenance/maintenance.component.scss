@@ -1,5 +1,5 @@
-/* Página de manutenção — descontraída, com as cores do logo, mas sem
-   perder o essencial: os jeitos de falar com a escola continuam à mão. */
+/* Página de manutenção — descontraída e genérica, sem nome, logo ou
+   qualquer informação do instituto. */
 .maintenance {
     position: relative;
     min-height: 100vh;
@@ -97,14 +97,11 @@
     text-align: center;
 }
 
-.maintenance-logo {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-    box-shadow: 0 8px 24px rgba(2, 136, 209, 0.2);
-    margin-bottom: 1.5rem;
+.maintenance-icon {
+    display: block;
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 1.25rem;
 }
 
 .maintenance-badge {

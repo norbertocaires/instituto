@@ -17,7 +17,12 @@ import { MaintenanceComponent } from './pages/maintenance/maintenance.component'
 const MAINTENANCE_MODE = true;
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', component: MAINTENANCE_MODE ? MaintenanceComponent : HomeComponent, pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, title: 'Instituto Educacional Conviver' },
+  {
+    path: '',
+    component: MAINTENANCE_MODE ? MaintenanceComponent : HomeComponent,
+    title: MAINTENANCE_MODE ? 'IEC' : 'Instituto Educacional Conviver',
+    pathMatch: 'full'
+  },
   { path: '**', redirectTo: '' }
 ];

@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { SchoolDataService } from '../../services/school-data.service';
-import { SchoolInfo } from '../../models';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-maintenance',
@@ -10,6 +8,4 @@ import { SchoolInfo } from '../../models';
   styleUrl: './maintenance.component.scss'
 })
 export class MaintenanceComponent {
-  private schoolDataService = inject(SchoolDataService);
-  schoolInfo: SchoolInfo = this.schoolDataService.getSchoolInfo();
 }
