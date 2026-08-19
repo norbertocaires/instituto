@@ -1,5 +1,14 @@
-/* Página de manutenção — descontraída e genérica, sem nome, logo ou
-   qualquer informação do instituto. */
+/* Página de manutenção — descontraída e genérica: nem nome/logo do
+   instituto, nem a paleta de cores do site principal. Esquema próprio,
+   neutro (cinza + âmbar), pra não ter nenhuma ligação visual com a home. */
+
+$maintenance-bg-start: #f8fafc;
+$maintenance-bg-end: #e2e8f0;
+$maintenance-slate: #475569;
+$maintenance-slate-dark: #1e293b;
+$maintenance-amber: #f59e0b;
+$maintenance-amber-dark: #b45309;
+
 .maintenance {
     position: relative;
     min-height: 100vh;
@@ -7,7 +16,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--color-sky-light) 0%, #ffffff 55%, var(--color-sky-light) 100%);
+    background: linear-gradient(180deg, $maintenance-bg-start 0%, $maintenance-bg-end 100%);
     padding: 2rem;
 }
 
@@ -20,66 +29,62 @@
         position: absolute;
         border-radius: 50%;
         filter: blur(2px);
-        opacity: 0.35;
+        opacity: 0.25;
+        background: $maintenance-slate;
         animation: float 7s ease-in-out infinite;
     }
 
-    .blob-sky {
+    .blob-1 {
         width: 140px;
         height: 140px;
         top: 12%;
         left: 8%;
-        background: var(--color-sky);
     }
 
-    .blob-green {
+    .blob-2 {
         width: 110px;
         height: 110px;
         bottom: 10%;
         left: 12%;
-        background: var(--color-green);
         animation-delay: 1.5s;
     }
 
-    .blob-purple {
+    .blob-3 {
         width: 160px;
         height: 160px;
         top: 18%;
         right: 8%;
-        background: var(--color-purple);
         animation-delay: 0.8s;
     }
 
     .dot {
         position: absolute;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
-        opacity: 0.7;
+        opacity: 0.6;
+        background: $maintenance-amber;
         animation: float 5s ease-in-out infinite;
     }
 
-    .dot-orange {
+    .dot-1 {
         top: 30%;
         right: 20%;
-        background: var(--color-orange);
     }
 
-    .dot-yellow {
+    .dot-2 {
         bottom: 25%;
         right: 15%;
-        width: 12px;
-        height: 12px;
-        background: var(--color-yellow);
+        width: 10px;
+        height: 10px;
         animation-delay: 1s;
     }
 
-    .dot-teal {
+    .dot-3 {
         top: 55%;
         left: 6%;
-        width: 14px;
-        height: 14px;
-        background: var(--color-teal);
+        width: 12px;
+        height: 12px;
         animation-delay: 2s;
     }
 }
@@ -102,24 +107,24 @@
     font-size: 3.5rem;
     line-height: 1;
     margin-bottom: 1.25rem;
+    animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
 }
 
 .maintenance-badge {
     display: inline-block;
     padding: 0.4rem 1.1rem;
     border-radius: 999px;
-    background: var(--gradient-brand);
+    background: $maintenance-amber;
     color: white;
     font-weight: 700;
     font-size: 0.9rem;
     letter-spacing: 0.02em;
     margin-bottom: 1.25rem;
-    animation: wiggle 3s ease-in-out infinite;
-}
-
-@keyframes wiggle {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
 }
 
 .maintenance-content h1 {
@@ -127,15 +132,12 @@
     font-weight: 900;
     line-height: 1.15;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--color-sky-dark) 0%, var(--color-purple) 60%, var(--color-orange) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: $maintenance-slate-dark;
 }
 
 .maintenance-content > p {
     font-size: 1.1rem;
-    color: var(--color-text-muted);
+    color: $maintenance-slate;
     line-height: 1.5;
     margin: 0;
 }
@@ -149,7 +151,7 @@
 @media (prefers-reduced-motion: reduce) {
     .maintenance-decor .blob,
     .maintenance-decor .dot,
-    .maintenance-badge {
+    .maintenance-icon {
         animation: none;
     }
 }
