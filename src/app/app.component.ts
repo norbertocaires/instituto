@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 // Importing components
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -14,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterOutlet,
     HeaderComponent,
     HeroComponent,
+    ContactInfoComponent,
     MissionComponent,
     FooterComponent
   ],

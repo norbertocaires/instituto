@@ -1,0 +1,133 @@
+/* Seção de contato em destaque — é o motivo do site existir, então fica
+   logo depois do hero, com cartões grandes e um mapa de verdade. */
+.contact-info {
+    background: var(--color-sky-light);
+    padding: 5rem 0;
+}
+
+.contact-info-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 900;
+        margin-bottom: 0.75rem;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+    }
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 1.75rem;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(2, 136, 209, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+
+    &:nth-child(1) .contact-card-icon {
+        background: rgba(41, 182, 246, 0.15);
+        color: var(--color-sky-dark);
+    }
+
+    &:nth-child(2) .contact-card-icon {
+        background: rgba(76, 175, 80, 0.15);
+        color: var(--color-green-dark);
+    }
+
+    &:nth-child(3) .contact-card-icon {
+        background: rgba(251, 140, 0, 0.15);
+        color: var(--color-orange);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: var(--color-text-muted);
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        word-break: break-word;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(2, 136, 209, 0.18);
+        border-color: var(--color-sky);
+    }
+}
+
+.contact-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.contact-card-cta {
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-purple);
+}
+
+.contact-map {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(2, 136, 209, 0.12);
+
+    iframe {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-info {
+        padding: 3.5rem 0;
+    }
+
+    .contact-info-header h2 {
+        font-size: 1.75rem;
+    }
+}
