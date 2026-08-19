@@ -1,35 +1,29 @@
 # Instituto Escola - Website
 
-Este é um projeto Angular para um website institucional de escola, focado na apresentação visual da instituição. O projeto não inclui funcionalidades de login ou administração, sendo puramente um site de apresentação.
+Projeto Angular para o website institucional do **Instituto Educacional Conviver**. Não inclui login ou área administrativa — é um site de apresentação.
 
 ## 🏫 Sobre o Projeto
 
-Um website moderno e responsivo para apresentar informações da escola, incluindo:
-- Informações institucionais
-- Cursos oferecidos
-- Corpo docente
-- Eventos e notícias
-- Contato e localização
-- Galeria de fotos
+O projeto está atualmente reduzido a uma base mínima: header, seção inicial (hero) e rodapé, todos exibindo apenas o nome da escola. Todo o conteúdo variável (cursos, eventos, notícias, contato, sobre) foi removido de propósito e pode ser reconstruído a partir daqui.
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Angular 18** - Framework principal
+- **Angular 18** - Framework principal (standalone components)
 - **TypeScript** - Linguagem de programação
 - **SCSS** - Pré-processador CSS
-- **Angular Material** - Componentes UI
-- **Angular Router** - Navegação
+- **Angular Router** - Instalado e pronto, mas sem rotas definidas (`app.routes.ts` está vazio)
+
+> `@angular/material` e `@angular/cdk` estão nas dependências mas não são usados em nenhum componente no momento.
 
 ## 📦 Instalação e Execução
 
 ### Pré-requisitos
-- Node.js 18+ 
-- npm ou yarn
-- Angular CLI
+- Node.js 18+
+- npm
 
 ### Passos para execução
 
-1. **Clone o repositório** (se aplicável)
+1. **Clone o repositório**
 ```bash
 git clone <url-do-repositorio>
 cd instituto
@@ -42,86 +36,64 @@ npm install
 
 3. **Execute o servidor de desenvolvimento**
 ```bash
-ng serve
+npm start
 ```
+> O Angular CLI (`ng`) só está instalado localmente no projeto. Rodar `ng serve` direto no terminal falha com "comando não reconhecido" a menos que você tenha o `@angular/cli` instalado globalmente — use `npm start` (ou `npx ng serve`).
 
 4. **Acesse o aplicativo**
-Navegue para `http://localhost:4200/`. A aplicação será recarregada automaticamente quando você alterar os arquivos fonte.
+Navegue para `http://localhost:4200/`. A aplicação recarrega automaticamente quando você altera os arquivos fonte.
 
 ## 🛠️ Scripts Disponíveis
 
-- `ng serve` - Inicia o servidor de desenvolvimento
-- `ng build` - Constrói o projeto para produção
-- `ng test` - Executa os testes unitários
-- `ng lint` - Executa o linter do código
-- `ng generate component nome-do-componente` - Gera um novo componente
+| Script | Comando | O que faz |
+|---|---|---|
+| `npm start` | `ng serve` | Sobe o servidor de desenvolvimento |
+| `npm run build` | `ng build` | Build de desenvolvimento |
+| `npm run build:prod` | `ng build --configuration production --base-href /` | Build de produção |
+| `npm run watch` | `ng build --watch --configuration development` | Build em modo watch |
+| `npm test` | `ng test` | Executa os testes unitários (Karma/Jasmine) |
+| `npm run deploy` | `gh-pages -d dist/instituto-escola/browser -c institutoconviver.com.br --nojekyll` | Deploy manual para o GitHub Pages |
+
+Para gerar um novo componente: `npx ng generate component components/nome-do-componente`.
 
 ## 📁 Estrutura do Projeto
 
 ```
 src/
 ├── app/
-│   ├── components/     # Componentes reutilizáveis
-│   ├── pages/         # Páginas principais
-│   ├── services/      # Serviços
-│   └── shared/        # Módulos compartilhados
-├── assets/            # Recursos estáticos
-└── styles/            # Estilos globais
+│   ├── components/     # header, hero, footer
+│   ├── models/         # Interfaces (hoje só SchoolInfo)
+│   ├── services/       # SchoolDataService (dados da escola)
+│   ├── app.component.*
+│   ├── app.config.ts
+│   └── app.routes.ts   # vazio, pronto para páginas futuras
+├── index.html
+└── styles.scss
 ```
 
 ## 🎨 Componentes Principais
 
-- **Header/Navigation** - Menu principal e navegação
-- **Home** - Página inicial
-- **About** - Sobre a escola
-- **Courses** - Cursos oferecidos
-- **Faculty** - Corpo docente
-- **Events** - Eventos e notícias
-- **Contact** - Informações de contato
-- **Footer** - Rodapé
+- **Header** - Marca/logo com o nome da escola
+- **Hero** - Seção inicial de boas-vindas
+- **Footer** - Rodapé com nome da escola e copyright
+
+Novas seções (sobre, cursos, eventos, notícias, contato etc.) podem ser adicionadas como novos componentes standalone em `src/app/components/`, consumindo dados do `SchoolDataService`.
 
 ## 📱 Responsividade
 
-O projeto foi desenvolvido com foco em design responsivo, garantindo uma boa experiência em:
-- Desktop
-- Tablet
-- Mobile
+O projeto foi desenvolvido com foco em design responsivo, garantindo uma boa experiência em desktop, tablet e mobile.
 
 ## 🔧 Build para Produção
 
-Execute `ng build` para construir o projeto. Os artefatos serão armazenados no diretório `dist/`.
+Execute `npm run build:prod` para construir o projeto. Os artefatos são gerados em `dist/instituto-escola/`.
 
-## � Deploy no GitHub Pages
+## 🚀 Deploy no GitHub Pages
 
-### Configuração Automática (GitHub Actions)
+Veja o [DEPLOY.md](DEPLOY.md) para o guia completo. Resumo:
 
-O projeto está configurado com GitHub Actions para deploy automático. Quando você fizer push para a branch `main`, o site será automaticamente construído e publicado no GitHub Pages.
+- **Automático**: push na branch `master` dispara o workflow em [.github/workflows/deploy.yml](.github/workflows/deploy.yml), que builda e publica via GitHub Actions (Pages configurado como origem "GitHub Actions", não uma branch `gh-pages`).
+- **Manual**: `npm run deploy` publica `dist/instituto-escola/browser` numa branch `gh-pages` com domínio customizado `institutoconviver.com.br`.
 
-### Deploy Manual
-
-Para fazer deploy manualmente, execute:
-
-```bash
-# Instalar dependências
-npm install --legacy-peer-deps
-
-# Build para produção
-npm run build:prod
-
-# Deploy para GitHub Pages
-npm run deploy
-```
-
-### Configuração Inicial do GitHub Pages
-
-1. No seu repositório do GitHub, vá em **Settings**
-2. Na seção **Pages**, selecione:
-   - **Source**: Deploy from a branch
-   - **Branch**: `gh-pages` (será criada automaticamente)
-3. O site estará disponível em: `https://[seu-usuario].github.io/instituto/`
-
-**Nota**: Certifique-se de alterar o `--base-href` no script `build:prod` do `package.json` para corresponder ao nome do seu repositório.
-
-## �📄 Licença
+## 📄 Licença
 
 Este projeto é destinado ao uso educacional e institucional.

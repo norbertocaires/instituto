@@ -4,30 +4,12 @@
       <!-- Logo/Brand -->
       <div class="navbar-brand">
         <div class="logo">
-          <i class="fas fa-pencil-alt"></i>
+          <img src="favicon.png" alt="{{ schoolInfo.nome }}">
         </div>
         <div class="brand-text">
           <h1>{{ schoolInfo.nome }}</h1>
-          <span>{{ schoolInfo.slogan }}</span>
         </div>
       </div>
-      
-      <!-- Navigation Links -->
-      <ul class="nav-links" [class.active]="isMenuOpen">
-        <li><a href="#hero" class="smooth-scroll" (click)="closeMenu()">Início</a></li>
-        <li><a href="#sobre" class="smooth-scroll" (click)="closeMenu()">Sobre</a></li>
-        <li><a href="#cursos" class="smooth-scroll" (click)="closeMenu()">Cursos</a></li>
-        <li><a href="#noticias" class="smooth-scroll" (click)="closeMenu()">Notícias</a></li>
-        <li><a href="#eventos" class="smooth-scroll" (click)="closeMenu()">Eventos</a></li>
-        <li><a href="#contato" class="smooth-scroll" (click)="closeMenu()">Contato</a></li>
-      </ul>
-      
-      <!-- Mobile Menu Button -->
-      <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </nav>
   </div>
 </header>

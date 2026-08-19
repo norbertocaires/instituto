@@ -12,8 +12,11 @@ import { SchoolInfo } from '../../models';
 export class FooterComponent {
   private schoolDataService = inject(SchoolDataService);
   schoolInfo: SchoolInfo = this.schoolDataService.getSchoolInfo();
-  
 
-  
   currentYear = new Date().getFullYear();
+
+  getWhatsAppLink(): string {
+    const cleanNumber = this.schoolInfo.whatsapp.replace(/\D/g, '');
+    return `https://wa.me/${cleanNumber}`;
+  }
 }
