@@ -104,19 +104,15 @@ $maintenance-amber-dark: #b45309;
 
 .maintenance-icon {
     display: block;
-    width: 190px;
-    height: auto;
-    margin: 0 auto 1.5rem;
-
-    .wrench {
-        transform-origin: 118px 107px;
-        animation: wrench-turn 2.2s ease-in-out infinite;
-    }
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    animation: wiggle 3s ease-in-out infinite;
 }
 
-@keyframes wrench-turn {
-    0%, 100% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
 }
 
 .maintenance-badge {
@@ -155,7 +151,7 @@ $maintenance-amber-dark: #b45309;
 @media (prefers-reduced-motion: reduce) {
     .maintenance-decor .blob,
     .maintenance-decor .dot,
-    .maintenance-icon .wrench {
+    .maintenance-icon {
         animation: none;
     }
 }
