@@ -7,7 +7,11 @@
     // Single Page Apps for GitHub Pages
     // MIT License
     // https://github.com/rafgraph/spa-github-pages
-    var pathSegmentsToKeep = 1;
+    //
+    // 0 porque o site é publicado na raiz do domínio (institutoconviver.com.br/),
+    // não num subcaminho tipo usuario.github.io/repo/. Se um dia o deploy passar
+    // a usar um subcaminho, isso (e o --base-href do build:prod) precisa mudar junto.
+    var pathSegmentsToKeep = 0;
     var l = window.location;
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
