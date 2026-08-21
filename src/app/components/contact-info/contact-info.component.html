@@ -5,13 +5,6 @@
     </div>
 
     <div class="contact-info-grid">
-      <a class="contact-card" href="https://maps.app.goo.gl/5H7T4zk72guBvoir5" target="_blank" rel="noopener">
-        <span class="contact-card-icon">📍</span>
-        <h3>Endereço</h3>
-        <p>{{ schoolInfo.endereco }}</p>
-        <span class="contact-card-cta">Ver no mapa →</span>
-      </a>
-
       <a class="contact-card" [href]="whatsAppLink" target="_blank" rel="noopener">
         <span class="contact-card-icon">
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -21,13 +14,6 @@
         <h3>WhatsApp</h3>
         <p>{{ schoolInfo.telefone }}</p>
         <span class="contact-card-cta">Conversar agora →</span>
-      </a>
-
-      <a class="contact-card" [href]="'mailto:' + schoolInfo.email">
-        <span class="contact-card-icon">✉️</span>
-        <h3>E-mail</h3>
-        <p>{{ schoolInfo.email }}</p>
-        <span class="contact-card-cta">Enviar e-mail →</span>
       </a>
 
       <div class="contact-card contact-card-social">
@@ -46,6 +32,20 @@
           </a>
         </div>
       </div>
+
+      <a class="contact-card" [href]="'mailto:' + schoolInfo.email">
+        <span class="contact-card-icon">✉️</span>
+        <h3>E-mail</h3>
+        <p>{{ schoolInfo.email }}</p>
+        <span class="contact-card-cta">Enviar e-mail →</span>
+      </a>
+
+      <a class="contact-card" href="https://maps.app.goo.gl/5H7T4zk72guBvoir5" target="_blank" rel="noopener">
+        <span class="contact-card-icon">📍</span>
+        <h3>Endereço</h3>
+        <p>{{ schoolInfo.endereco }}</p>
+        <span class="contact-card-cta">Ver no mapa →</span>
+      </a>
     </div>
   </div>
 </section>

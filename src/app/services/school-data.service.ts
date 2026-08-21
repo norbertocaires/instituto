@@ -3,7 +3,7 @@ import { SchoolInfo } from '../models';
 
 export const schoolData: SchoolInfo = {
   nome: 'Instituto Educacional Conviver',
-  slogan: '',
+  slogan: 'IEC',
   endereco: 'Praça Padre Antônio Folha, 162, Barra da Estiva, BA, Brazil',
   telefone: '(77) 99808-7319',
   whatsapp: '(77) 99808-7319',
