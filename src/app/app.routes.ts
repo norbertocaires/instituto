@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { MaintenanceComponent } from './pages/maintenance/maintenance.component';
 
 /**
  * Modo manutenção.
@@ -16,11 +14,19 @@ import { MaintenanceComponent } from './pages/maintenance/maintenance.component'
  */
 const MAINTENANCE_MODE = true;
 
+// Rotas carregadas sob demanda (loadComponent): quem cai em "/" só baixa o
+// JS da página que está vendo, não o das duas — importa na carga inicial.
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent, title: 'IEC' },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
+    title: 'IEC'
+  },
   {
     path: '',
-    component: MAINTENANCE_MODE ? MaintenanceComponent : HomeComponent,
+    loadComponent: () => MAINTENANCE_MODE
+      ? import('./pages/maintenance/maintenance.component').then(m => m.MaintenanceComponent)
+      : import('./pages/home/home.component').then(m => m.HomeComponent),
     title: MAINTENANCE_MODE ? 'Em manutenção' : 'IEC',
     pathMatch: 'full'
   },

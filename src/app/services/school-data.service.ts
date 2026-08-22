@@ -7,7 +7,7 @@ export const schoolData: SchoolInfo = {
   endereco: 'Praça Padre Antônio Folha, 162, Barra da Estiva, BA, Brazil',
   telefone: '(77) 99808-7319',
   whatsapp: '(77) 99808-7319',
-  email: 'iec.conviverpositivo@gmail.com',
+  email: 'conviver.secretaria@gmail.com',
   instagram: 'https://www.instagram.com/institutoeducacionalconviver',
   facebook: 'https://www.facebook.com/conviveriec/',
   fundacao: '',
